@@ -447,7 +447,7 @@ export function generateMessages(output: Writer, messages: {
   }[]
 }[]) {
   messages.forEach(message => {
-    output.write()
+    output.write();
     generateMessage(output, message)
   })
 }

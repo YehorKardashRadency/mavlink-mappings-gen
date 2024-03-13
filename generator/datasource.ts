@@ -208,7 +208,9 @@ export class XmlDataSource {
       workInProgress: isWorkInProgress(message),
       fields: this.readMessageFieldDefs(message),
       wip: Boolean(message.wip)
-    } as MessageDef)).filter((x: any) => !x.wip)
+    } as MessageDef))
+    // Don't ignore WIP messages
+    // .filter((x: any) => !x.wip)
 
     return pipeable(result)
       // calculate payload length
